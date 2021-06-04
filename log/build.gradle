@@ -31,8 +31,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.blankj:utilcodex:1.30.5'
+    implementation 'com.google.code.gson:gson:2.8.6'
 }
 publish {
     artifactId = 'JLog' //project name
-    version = '1.0.0' //version code
+    version = '1.0.1' //version code
 }

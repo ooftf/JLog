@@ -255,7 +255,7 @@ object JLog {
         var message = if (msg is String) {
             msg
         } else {
-            jsonParser?.object2Json(msg) ?: "JsonParse is null"
+            jsonParser.object2Json(msg) ?: "JsonParse is null"
         }
         try {
             if (message.startsWith("{")) {
@@ -352,7 +352,7 @@ object JLog {
     }
 
     private var interceptor: Interceptor? = null
-    private var jsonParser: JsonParser? = null
+    private var jsonParser: JsonParser = GsonJsonParser()
 
     /**
      * @param level
@@ -382,7 +382,7 @@ object JLog {
         JLog.interceptor = interceptor
     }
 
-    fun setJsonParser(jsonParser: JsonParser?) {
+    fun setJsonParser(jsonParser: JsonParser) {
         JLog.jsonParser = jsonParser
     }
 
